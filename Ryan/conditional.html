@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="utf-8">
+	<title>Shoe Suggestion Program</title>
+	<script type="text/JavaScript">
+	function faveColor() {
+		//Get input from the user.
+		var weather = document.getElementById('color').value;
+		
+		//Do what you need to.
+		
+		var shoeSuggestion;
+		if (weather == "hot") {
+			shoeSuggestion = "Then you should wear sandals";
+		}
+		
+		else if(weather == "rain") {
+			shoeSuggestion = "Then you should wear galoshes";
+		}
+		else if(weather == "snow"){
+			shoeSuggestion = "Then you should wear boots";
+		}
+		
+		
+		//Display result
+		var div = document.getElementById('display');
+		div.innerHTML = shoeSuggestion;
+		
+	}
+	
+	</script>	
+	</head>
+	<body>
+	<h2>What's your favorite color? (red, white or blue?)</h2> 
+	<input type="text" id="color">
+	<button type="button" onclick="faveColor()">Click Here!</button><br>
+	<div id="display"></div>
+
+	</body>
+
+</html>
