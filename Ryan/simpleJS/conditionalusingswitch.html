@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="utf-8">
+	<title>Favorite Color Program</title>
+	<script type="text/JavaScript">
+	function faveColor() {
+		//Get input from the user.
+		var chosenColor = document.getElementById('color').value.toLowerCase();
+		
+		//Use the switch statement.
+		var favoriteColor;
+		switch(chosenColor) {
+    		case 'blue' :
+    		case 'red' :
+    		case 'white' :
+        		favoriteColor = "You Might be American."
+        		break;
+    		case 'yellow':
+    		case 'green' :
+        		favoriteColor = "You might be from Brazil."
+        		break;
+   			 default:
+        		favoriteColor = "I'm not sure if that is even a color. Try again, maybe?"
+        		
+}
+		/*var favoriteColor;
+		if (chosenColor == "red") {
+			favoriteColor = "Good choice, I also like red";
+		}
+		else if(chosenColor == "white") {
+			favoriteColor = "White is a nice color";
+		}
+		else if(chosenColor == "blue"){
+			favoriteColor = "The color of smurfs";
+		}
+		else { 
+			favoriteColor = "That is not one of the options.";
+		}*/
+		
+		
+		//Display result
+
+		
+		document.getElementById('display').innerHTML = favoriteColor;
+		
+	}
+	
+	</script>	
+	</head>
+	<body>
+	<h2>What's your favorite color?</h2> 
+	<input type="text" id="color">
+	<button type="button" onclick="faveColor()">Click Here!</button><br>
+	<div id="display"></div>
+
+	</body>
+
+</html>
