@@ -6,9 +6,7 @@ and open the template in the editor.
 -->
 <html>
   <head>
-    <title>TODO supply a title</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS-Sandbox</title>
     <script src="js-sandbox.js"></script>
   </head>
   <body>
@@ -17,7 +15,7 @@ and open the template in the editor.
     <button type='button' onclick='getfootware()'>What should I wear?</button>
     <div id='needed'></div>
     
-    <h1>Array statements</h1>
+    <h1>Array/Parameters</h1>
     Number 1:<input type="text" id="num1"><br>
     Number 2:<input type="text" id="num2"><br>
     Number 3:<input type="text" id="num3"><br>
@@ -25,5 +23,42 @@ and open the template in the editor.
     Number 5:<input type="text" id="num5"><br>
     <button type="button" onclick="getEvens()">Find evens!</button>
     <div id="evens"></div>
+    
+    <h1>Associative array</h1>
+    Person 1:<input type="text" id="person1"><br>
+    Person 2:<input type="text" id="person2"><br>
+    Person 3:<input type="text" id="person3"><br>
+    <button type="button" onclick="array()">Associative array</button>
+    <div id="arrayOut"></div>
+    
+    <h1>Loops</h1>
+    What number would you like to count to? <input type="text" id="count"><br>
+    <button type="button" onclick="loop()">Loop</button>
+    <div id="loopOut"></div>
+    
+    <h1>Broken loop</h1>
+    <button type="button" onclick="loopBroke()">Don't click ! Infinite Loop!</button>
+    <div id="brokenOut"></div>
+    
+    <h1>Associative array</h1>
+    Person 1:<input type="text" id="person1"><br>
+    Person 2:<input type="text" id="person2"><br>
+    Person 3:<input type="text" id="person3"><br>
+    <button type="button" onclick="arrayBroke()">Broken associative array</button>
+    <div id="arrayBrokeOut"></div>
+    
+    <h1>Array/Parameters</h1>
+    Number 1:<input type="text" id="num1"><br>
+    Number 2:<input type="text" id="num2"><br>
+    Number 3:<input type="text" id="num3"><br>
+    Number 4:<input type="text" id="num4"><br>
+    Number 5:<input type="text" id="num5"><br>
+    <button type="button" onclick="getBrokeEvens()">Find evens!</button>
+    <div id="evensBroke"></div>
+    
+    <h1>Conditional statement</h1>
+    What is the weather today: <input type='text' id='weather'><br>
+    <button type='button' onclick='getBrokefootware()'What should I wear?</button>
+    <div id='neededBroke'></div>
   </body>
 </html>
