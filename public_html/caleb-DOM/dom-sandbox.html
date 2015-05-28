@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+  <head>
+    <title>TODO supply a title</title>
+    <script src="dom-sandbox.js"></script>
+  </head>
+  <body>
+    <h1>Good DOM</h1>
+    <button type="button" onclick="runDom()">DOM button creator</button>
+    <ul id="hitchhikers">
+      <li id="Marvin">Marvin</li>
+      <li id="Ford">Ford</li>
+      <li id="Arthur">Arthur</li>
+      <li id="Trilian">Trilian</li>
+      <li id="Zefod">Zefod</li>
+    </ul>
+    <ul id="ships">
+      <li id="Heart-of-Gold">Heart-of-Gold</li>
+      <li id="Heart-of-Gold-Explorer-Pod">Heart-of-Gold-Explorer-Pod</li>
+      <li id="Vogon-Destructor-Fleet-1">Vogon-Destructor-Fleet-1</li>
+      <li id="Vogon-Destructor-Fleet-2">Vogon-Destructor-Fleet-2</li>
+      <li id="Vogon-Destructor-Fleet-3">Vogon-Destructor-Fleet-3</li>
+    </ul>
+    Enter a name to add:<input type="text" id="name1"><br>
+    Enter a ship to add:<input type="text" id="name2"><br>
+    <button type="button" onclick="newHitchhiker()">Add Hitchhiker</button>
+    <button type="button" onclick="removeHitchhiker()">Remove Hitchhiker</button>
+    <button type="button" onclick="addShip()">Add Ship</button>
+    <button type="button" onclick="removeShip()">Remove Ship</button>
+    
+    <h1>Bad DOM</h1>
+    <button type="button" onclick="button()">DOM button creator</button>
+    <ul id="hitchhikers">
+      <li>Marvin</li>
+      <li>Ford</li>
+      <li>Arthur</li>
+      <li>Trilian</li>
+      <li>Zefod</li>
+    </ul>
+    Enter your name:<input type="text" id="name"><br>
+    <button type="button" onclick="hitchhiker()">Append Hitchhiker list</button>
+    <ul id="ships">
+      <li>Heart of Gold</li>
+      <li>Heart of Gold Explorer Pod</li>
+      <li>Vogon Destructor Fleet 1</li>
+      <li>Vogon Destructor Fleet 2</li>
+      <li>Vogon Destructor Fleet 3</li>
+    </ul>
+    <button type="button" onclick="ship()">Remove Ship</button>
+  </body>
+</html>
