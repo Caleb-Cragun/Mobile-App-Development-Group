@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DOM Manipulation</title>
+    <script src="dom.js"></script>
+  </head>
+  <body>
+    <h1>Good DOM</h1>
+    <button type="button" onclick="runDom()">Add Button</button>
+    <button type="button" onclick="runDom2()">Add Button</button>
+    
+    <h1>Adding to List using Creating Element and doing .appendChild()</h1>
+    <button type="button" onclick="runDom3()">Add Button</button>
+	<ul id="names">
+      <li id="Ryan">Ryan</li>
+      <li id="Lisa">Lisa</li>
+      <li id="Jake">Jake</li>
+    </ul>
+    Enter a name to add:<input type="text" id="name1"><br>
+    <button type="button" onclick="addName()">Add Name</button>
+    <button type="button" onclick="removeName()">Remove Hitchhiker</button>
+    <ul id="ships">
+      <li id="Heart-of-Gold">Heart-of-Gold</li>
+      <li id="Heart-of-Gold-Explorer-Pod">Heart-of-Gold-Explorer-Pod</li>
+      <li id="Vogon-Destructor-Fleet-1">Vogon-Destructor-Fleet-1</li>
+      <li id="Vogon-Destructor-Fleet-2">Vogon-Destructor-Fleet-2</li>
+      <li id="Vogon-Destructor-Fleet-3">Vogon-Destructor-Fleet-3</li>
+    </ul>
+
+    Enter a ship to add:<input type="text" id="name2"><br>
+
+    
+    <button type="button" onclick="addShip()">Add Ship</button>
+    <button type="button" onclick="removeShip()">Remove Ship</button>
+    
+    <h1>Bad DOM</h1>
+    For this I didn't do the createElement in all caps. So it was 'button' rather than 'BUTTON' It will display the text I have in it but not an actual button object.<br>
+    <button type="button" onclick="button()">DOM button creator</button>
+    <ul id="hitchhikers">
+      <li>Marvin</li>
+      <li>Ford</li>
+      <li>Arthur</li>
+      <li>Trilian</li>
+      <li>Zefod</li>
+    </ul>
+    Enter your name:<input type="text" id="name"><br>
+    <button type="button" onclick="hitchhiker()">Append Hitchhiker list</button>
+    <ul id="ships">
+      <li>Heart of Gold</li>
+      <li>Heart of Gold Explorer Pod</li>
+      <li>Vogon Destructor Fleet 1</li>
+      <li>Vogon Destructor Fleet 2</li>
+      <li>Vogon Destructor Fleet 3</li>
+    </ul>
+    <button type="button" onclick="ship()">Remove Ship</button>-->
+  </body>
+</html>
