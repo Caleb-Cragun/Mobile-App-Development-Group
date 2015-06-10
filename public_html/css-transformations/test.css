@@ -1,0 +1,92 @@
+#d21 {
+    width: 200px;
+    height: 200px;
+    background-color: lightblue;
+    transition: width 2s, height 2s, transform 10s;
+}
+#d21:active{
+    transform: rotate(180deg);
+}
+#d22 {
+    width: 200px;
+    height: 200px;
+    background-color: lightcoral;
+    transition: width 2s, height 2s, transform 9s;
+}
+#d22:active{
+    transform: translate(150px);
+}
+#d23 {
+    width: 200px;
+    height: 200px;
+    background-color: lightgray;
+    transition: width 2s, height 2s, transform 8s;
+}
+#d23:active{
+    transform: scale(0.5,0.5);
+}
+#d24 {
+    width: 200px;
+    height: 200px;
+    background-color: lightpink;
+    transition: width 2s, height 2s, transform 7s;
+}
+#d24:active{
+    transform: skewX(45deg);
+}
+#d25 {
+    width: 200px;
+    height: 200px;
+    background-color: lightslategray;
+    transition: width 2s, height 2s, transform 6s;
+}
+#d25:active{
+    transform: skewY(45deg);
+}
+#d26 {
+    width: 200px;
+    height: 200px;
+    background-color: lightseagreen;
+    transition: width 2s, height 2s, transform 5s;
+}
+#d26:active{
+    transform: skew(45deg,45deg);
+}
+#d27 {
+    width: 200px;
+    height: 200px;
+    background-color: lightsalmon;
+    transition: width 2s, height 2s, transform 4s;
+}
+#d27:active{
+    transform: matrix(1, 1, 1, 0, 0, 0);
+}
+#d31{
+    width: 200px;
+    height: 200px;
+    background-color: lime;
+    transition: width 2s, height 2s, transform 3s;
+}
+#d31:active{
+    transform: rotateX(180deg);
+}
+
+#d32{
+    width: 200px;
+    height: 200px;
+    background-color: navy;
+    transition: width 2s, height 2s, transform 2s;
+}
+#d32:active{
+    transform: rotateY(180deg);
+}
+
+#d33{
+    width: 200px;
+    height: 200px;
+    background-color: rosybrown;
+    transition: width 2s, height 2s, transform 1s;
+}
+#d33:active{
+    transform: rotateZ(180deg);
+}
