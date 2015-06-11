@@ -1,0 +1,100 @@
+<head>
+    <style>
+        p {
+    border-style: double;
+    border-width: 2px;
+	width: 30%;
+		}
+		div {
+		width: 30%;
+		height: 30%;
+		border-style: solid;
+		border-color: blue;
+		}
+    </style>
+</head>
+<body>
+    <main>
+        <span id="top">These are words</span><br>
+        <span id="id13959">Color Me</span><br>
+        <p id="b1">Box 1</button><br>
+        <p id="b2">Box 2</button><br>
+        <p id="b3">Box 3</button><br>
+        <p id="b4">Box 4</button><br>
+        <p id="b5">Box 5</button><br>
+        <p id="b6">Box 6</button><br>
+    
+		<div class="box" id="box1">
+			<h3> Touch Me! </h3>
+		</div>
+ 
+		<h3 id="statusdiv">Status</h3>
+	</main>
+<script>
+/*********
+ * Example code
+ **********/
+window.addEventListener('load', function(){ 
+    var box1 = document.getElementById('box1')
+    var statusdiv = document.getElementById('statusdiv')
+    var startx = 0
+    var dist = 0
+ 
+    box1.addEventListener('touchstart', function(e){
+        var touchobj = e.changedTouches[0] // reference first touch point (ie: first finger)
+        startx = parseInt(touchobj.clientX) // get x position of touch point relative to left edge of browser
+        statusdiv.innerHTML = 'Status: touchstart<br> ClientX: ' + startx + 'px'
+        e.preventDefault()
+    }, false)
+ 
+    box1.addEventListener('touchmove', function(e){
+        var touchobj = e.changedTouches[0] // reference first touch point for this event
+        var dist = parseInt(touchobj.clientX) - startx
+        statusdiv.innerHTML = 'Status: touchmove<br> Horizontal distance traveled: ' + dist + 'px'
+        e.preventDefault()
+    }, false)
+ 
+    box1.addEventListener('touchend', function(e){
+        var touchobj = e.changedTouches[0] // reference first touch point for this event
+        statusdiv.innerHTML = 'Status: touchend<br> Resting x coordinate: ' + touchobj.clientX + 'px'
+        e.preventDefault()
+    }, false)
+ }, false)
+ /*******
+  * End of example
+  ********/
+ 
+    // assign variables
+    var txt = document.getElementById("top");
+    var b1 = document.getElementById('b1');   
+    var xx = document.getElementById("id13959");
+    var button1 = document.getElementById("b1");
+    var button2 = document.getElementById("b2");
+    
+	
+	
+ /*******
+  * Sandbox code
+  ********/
+    //HAPPY PATH  as soon as it is touched
+    button1.addEventListener("touchstart", function () {xx.style.color="red";} , false);
+    button2.addEventListener("touchstart", function () {xx.style.color="blue";} , false);
+    
+    //HAPPY PATH  touch then move
+    document.getElementById('b3').addEventListener("touchmove", function () {document.getElementById('b3').innerHTML = "This is words";});
+    
+    //HAPPY PATH  Even if the touch leaves the area it will change on end
+    document.getElementById('b4').addEventListener("touchend", function () {document.getElementById('b4').innerHTML = "These are words";});
+    
+    //NASTY PATH  will not throw an error, but "touching" doesn't mean anything
+    var button5 = document.getElementById('b5');
+    button5.addEventListener("touching", function () {xx.style.color=blue;} , false);
+    
+    //NASTY PATH  touchobj does not handle a simple touch
+    var button6 = document.getElementById('b6');
+    button6.addEventListener("touchobj", function () {xx.style.color=white;} , false);
+    
+    //NASTY PATH  touched does not handle a simple touch
+    var button6 = document.getElementById('b6');
+    button6.addEventListener("touched", function () {xx.innerHTML='It still works if we change the text';} , false);
+</script>
