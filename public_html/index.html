@@ -1,16 +1,21 @@
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
 <html>
-  <head>
-    <title>TODO supply a title</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  </head>
-  <body>
-    <div>TODO write content</div>
-  </body>
+<head>
+    <meta charset="utf-8" />
+    <title>Gamedev Canvas Workshop</title>
+    <link href='gameStyle.css' type="text/css" rel="stylesheet">
+</head>
+<body>
+
+<canvas id="myCanvas" width="480" height="320"></canvas>
+<div>
+  <button type="button" id="fire">Fire</button>
+  <button type="button" id="up" onmousedown="upOn()" onmouseup="upOff()">Up</button>
+  <button type="button" id="left" onmousedown="leftOn()" onmouseup="leftOff()">Left</button>
+  <button type="button" id="down" onmousedown="downOn()" onmouseup="downOff()">Down</button>
+  <button type="button" id="right" onmousedown="rightOn()" onmouseup="rightOff()">Right</button>
+</div>
+<script src="gameScript.js"></script>
+
+</body>
 </html>
