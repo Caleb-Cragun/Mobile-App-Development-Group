@@ -258,6 +258,14 @@ function drawEnd(){
     var endText = canvas.getContext("2d");
     endText.font = "22px Arial";
     endText.fillText("Game Over",90,150);
+    var end = localStorage.getItem("HighScore");
+     if (end >= points){
+        endText.fillText("High Score: " + end, 50, 50);
+    }else{
+        localStorage.setItem("HighScore",points);
+        endText.fillText("New High Score:" + points, 50, 50);
+    }
+    endText.fillText();
 }
 
 function draw() {
