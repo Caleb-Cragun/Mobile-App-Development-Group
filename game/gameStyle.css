@@ -1,0 +1,37 @@
+canvas{
+    background-color: ghostwhite;
+}
+main{
+    margin:0 auto;
+    width:320px;
+    height:500px;
+    position:relative;
+    overflow:hidden;
+}
+#arrowPad{
+    position:absolute;
+    right:0;
+}
+
+#leftRight{
+  position: relative;
+  right: 42px;
+  bottom: 10px;
+}
+
+#leftRight img{
+  display:inline;
+  width:50px;
+}
+
+.updown{
+    height:50px;
+}
+
+#left{
+    margin-right: 5px;   
+}
+#down{
+    position:relative;
+    bottom:21px;
+}

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">      
+    <title>Shifting Planes</title>
+    <link href='gameStyle.css' type="text/css" rel="stylesheet">
+</head>
+<body onload="initialization()">
+    <main>
+        <canvas id="myCanvas" width="320" height="350" style="background-color: #7FC;"></canvas>
+        <div id="arrowPad">
+            <img src="images/up-pad.png" id="up" class="updown" onmousedown="upOn()" onmouseup="upOff()" ontouchstart="touchAvailable=true; upOn()" ontouchend="touchAvailable=true; upOff()"><br>
+            
+            <div id="leftRight">
+                <img src="images/left-pad.png" id="left" onmousedown="leftOn()" onmouseup="leftOff()" ontouchstart="touchAvailable=true; leftOn()" ontouchend="touchAvailable=true; leftOff()">
+                <img src="images/right-pad.png" id="right" onmousedown="rightOn()" onmouseup="rightOff()" ontouchstart="touchAvailable=true; rightOn()" ontouchend="touchAvailable=true; rightOff()"><br>
+            </div>
+            
+            <img src="images/down-pad.png" id="down" class="updown" onmousedown="downOn()" onmouseup="downOff()" ontouchstart="touchAvailable=true; downOn()" ontouchend="touchAvailable=true; downOff()">
+        </div>
+    </main>
+
+<script src="bouncingBallGame.js"></script>
+</body>
+</html>
