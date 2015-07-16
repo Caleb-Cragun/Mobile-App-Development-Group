@@ -4,7 +4,7 @@ var canvas = document.getElementById("myCanvas");
 //Globals :D
 BALL_RADIUS = 30;
 BALL_COUNT = 7;
-ctx = canvas.getContext("2d");
+var ctx = canvas.getContext("2d");
 balls = {};
 
 //Ball class
@@ -20,7 +20,11 @@ function ball(x, y, dx, dy, color, healing) {
     }
     this.healing = healing;
     this.r = BALL_RADIUS;
-    this.sprite = new sprite("sphere-sheet.png", 15, 15, 10, 8, true);
+    if (healing) {
+            this.sprite = new sprite("green-sheet.png", 15, 15, 10, 10, true);
+    } else {
+        this.sprite = new sprite("red-sheet.png", 15, 15, 4, 8, true);
+    }
 }
 
 function makeBalls() {
@@ -65,6 +69,11 @@ var shipWidth = 25;
 var shipX = (canvas.width - shipWidth) / 2;
 var shipY = (canvas.height - shipHeight) / 2;
 var square = canvas.getContext("2d");
+var s1 = false;
+var s2 = false;
+var s3 = false;
+var s4 = false;
+var s5 = false;
 
 //Event listeners for when certain key is pressed
 document.addEventListener("keydown", keyDownHandler, false);
@@ -89,6 +98,17 @@ function keyDownHandler(e) {
     else if (e.keyCode == 40) {
         downPressed = true;
     }
+    else if (e.keyCode == 83){
+        s1 = true;
+    }else if (e.keyCode == 65){
+        s2 = true;
+    }else if (e.keyCode == 76){
+        s3 = true;
+    }else if (e.keyCode == 84){
+        s4 = true;
+    }else if (e.keyCode == 89){
+        s5 = true;
+    }
 }
 
 //When key is not pressed anymore
@@ -104,6 +124,16 @@ function keyUpHandler(e) {
     }
     else if (e.keyCode == 40) {
         downPressed = false;
+    }else if (e.keyCode == 83){
+        s1 = false;
+    }else if (e.keyCode == 65){
+        s2 = false;
+    }else if (e.keyCode == 76){
+        s3 = false;
+    }else if (e.keyCode == 84){
+        s4 = false;
+    }else if (e.keyCode == 89){
+        s5 = false;
     }
 }
 
@@ -159,16 +189,15 @@ function drawText() {
 }
 
 function drawEnd(){
-    var endText = canvas.getContext("2d");
-    endText.font = "22px Arial";
-    endText.fillText("Game Over",90,150);
-    var end = localStorage.getItem("HighScore");
+    var end = localStorage.getItem("Score");
      if (end >= points){
-        endText.fillText("High Score: " + end, 50, 50);
+        window.alert("Game Over \nHigh Score: " + end, 50, 50);
     }else{
-        localStorage.setItem("HighScore",points);
-        endText.fillText("New High Score:" + points, 50, 50);
+        localStorage.setItem("Score",points);
+        window.alert("Game Over \nNew High Score:" + points, 50, 50);
+        
     }
+    window.onclick(start(300,0));
 }
 
 function draw() {
@@ -193,6 +222,9 @@ function draw() {
     }
     else if (upPressed && shipY > 0) {
         shipY -= 7;
+    } 
+    else if (s1 && s2 && s3 && s4 && s5){
+        
     }
 
     //Ball movement
@@ -205,6 +237,9 @@ function draw() {
 //----------------------------------------------------------------------
 //Collision detection
 function collisionDetection() {
+    //set transition times
+     document.getElementById("myCanvas").style.transition = "all 10s";
+    
     //Ball collision with wall
     for (i = 0; i < (BALL_COUNT); i++) {
         if (balls[i].x + balls[i].dx > canvas.width - balls[i].r || balls[i].x + balls[i].dx < balls[i].r) {
@@ -228,15 +263,20 @@ function collisionDetection() {
         }
     }
     
-
-    //
-    if ((points % 1000) == 0 && points != 0) {
-        health += 100;
-    }
     if (health <= 0) {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         drawEnd();
     }
+    if (points <= 250 && points > 150){
+         document.getElementById("myCanvas").style.transform = "rotateX(180deg)";
+    }
+    else if (points <= 500){
+         document.getElementById("myCanvas").style.transform = "rotateY(180deg)";
+    }
+    else {
+         document.getElementById("myCanvas").style.transform = "rotateZ(180deg)";
+    } 
+    
 }
 
 function rand(min, max) {
@@ -300,23 +340,20 @@ function sprite(image, width, height, frames, delay, repeat) {
                     };
                 }
 
-function start(){
-    var sText = canvas.getContext("2d");
-    sText.font = "22px Arial";
-    for (i = 3; i >= 0; i--){
-       sText.fillText("Starting..." + i,90,150);
-       setTimeout(1000);
-    }
+function start(healthA,pointsB){
+    window.alert("Begin");
+    this.health = healthA;
+    this.points = pointsB;
 }
 
 //----------------------------------------------------------------------
 //Game loop
-setInterval(draw, 10);
-var health = 300;
-var points = 0;
+setInterval(draw, 15);
+var health;
+var points;
 makeBalls();
 
 function initialization() {
-    start();
+    start(300,0);
     draw();
 }
