@@ -175,7 +175,7 @@ function downOff() {
 function drawShip() {
     square.beginPath();
     square.rect(shipX, shipY, shipWidth, shipHeight);
-    square.fillStyle = "#FF9933";
+    square.fillStyle = "#271F27";
     square.fill();
     square.closePath();
 }
@@ -191,13 +191,13 @@ function drawText() {
 function drawEnd(){
     var end = localStorage.getItem("Score");
      if (end >= points){
-        window.alert("Game Over \nHigh Score: " + end, 50, 50);
+        document.getElementById("messageArea").innerHTML = "Game Over High Score: " + end;
     }else{
         localStorage.setItem("Score",points);
-        window.alert("Game Over \nNew High Score:" + points, 50, 50);
-        
+        document.getElementById("messageArea").innerHTML = "Game Over New High Score:" + points;     
     }
-    window.onclick(start(300,0));
+    document.getElementById("myCanvas").style.transform = null;
+    ctx.restore();
 }
 
 function draw() {
@@ -270,13 +270,12 @@ function collisionDetection() {
     if (points <= 250 && points > 150){
          document.getElementById("myCanvas").style.transform = "rotateX(180deg)";
     }
-    else if (points <= 500){
+    else if (points <= 500 && points > 260){
          document.getElementById("myCanvas").style.transform = "rotateY(180deg)";
     }
-    else {
+    else if (points <= 1000 && points > 550) {
          document.getElementById("myCanvas").style.transform = "rotateZ(180deg)";
     } 
-    
 }
 
 function rand(min, max) {
@@ -341,10 +340,11 @@ function sprite(image, width, height, frames, delay, repeat) {
                 }
 
 function start(healthA,pointsB){
-    window.alert("Begin");
+    ctx.save();
+    document.getElementById("messageArea").innerHTML = "Begin";
     this.health = healthA;
     this.points = pointsB;
-}
+}   
 
 //----------------------------------------------------------------------
 //Game loop
@@ -353,7 +353,7 @@ var health;
 var points;
 makeBalls();
 
-function initialization() {
-    start(300,0);
-    draw();
+
+function initialization(message) {
+    document.getElementById("messageArea").innerHTML = message;
 }
